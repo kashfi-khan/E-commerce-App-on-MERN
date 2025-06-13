@@ -40,7 +40,9 @@ useEffect(()=>{
     }
   return (
     <div className="max-w-md mx-auto mt-20 p-6 bg-white rounded-xl shadow-2xl space-y-4">
-      <h1 className="text-2xl font-bold text-center">Login</h1>
+      <h1 className="text-3xl font-extrabold text-center tracking-wide text-gray-800 mb-6">
+  KHAN STORE
+</h1>
 
       
 
@@ -75,7 +77,7 @@ useEffect(()=>{
           onClick={collectData}
           className="w-32 bg-blue-600 text-white font-semibold py-2 rounded hover:bg-blue-700 transition duration-300"
         >
-          Sign Up
+          Login 
         </button>
       </div>
     </div>

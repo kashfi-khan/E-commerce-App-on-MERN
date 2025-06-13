@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router";
 import SignUp from "./Components/SignUp";
 import PrivateComponent from "./Components/privateComponent";
 import Login from "./Components/Login";
+import AddProduct from "./Components/Product/addProduct";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
             </div>
           }
         />
-        <Route path="/add" element={<h1>Add Product</h1>} />
+        <Route path="/add-product" element={<AddProduct />} />
         <Route path="/update" element={<h1>Update Product</h1>} />
         <Route path="/logout" element={<h1>Logout</h1>} />
         <Route path="/profile" element={<h1>Profile</h1>} />

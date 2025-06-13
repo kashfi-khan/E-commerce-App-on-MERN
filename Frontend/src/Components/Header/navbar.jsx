@@ -19,53 +19,73 @@ const Navbar = () => {
         </div>
 
         {/* Nav Links */}
-        <ul className="flex space-x-10 font-mono text-white text-lg pr-4">
-          <li>
-            <Link to="/" className="hover:text-yellow-300 transition duration-300">
-              Products
-            </Link>
-          </li>
-          <li>
-            <Link to="/add" className="hover:text-yellow-300 transition duration-300">
-              Add Products
-            </Link>
-          </li>
-          <li>
-            <Link to="/update" className="hover:text-yellow-300 transition duration-300">
-              Update Products
-            </Link>
-          </li>
-          <li>
-            <Link to="/profile" className="hover:text-yellow-300 transition duration-300">
-              Profile
-            </Link>
-          </li>
-
-          {/* Auth Links */}
-          {auth ? (
+        {auth ? (
+          <ul className="flex space-x-10 font-mono text-white text-lg pr-4">
             <li>
-              <Link to="/signup" onClick={handleLogout} className="hover:text-yellow-300 transition duration-300">
-                Logout
+              <Link
+                to="/"
+                className="hover:text-yellow-300 transition duration-300"
+              >
+                Products
               </Link>
             </li>
-          ) : (
-            <>
-              <li>
-                <Link to="/signup" className="hover:text-yellow-300 transition duration-300">
-                  SignUp
-                </Link>
-              </li>
-              <li>
-                <Link to="/login" className="hover:text-yellow-300 transition duration-300">
-                  Login
-                </Link>
-              </li>
-            </>
-          )}
-        </ul>
+            <li>
+              <Link
+                to="/add-product"
+                className="hover:text-yellow-300 transition duration-300"
+              >
+                Add Products
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/update"
+                className="hover:text-yellow-300 transition duration-300"
+              >
+                Update Products
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/profile"
+                className="hover:text-yellow-300 transition duration-300"
+              >
+                Profile
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/signup"
+                onClick={handleLogout}
+                className="hover:text-yellow-300 transition duration-300"
+              >
+                Logout
+              </Link>
+            </li>           
+          </ul>
+        ) : (
+          <ul className="flex space-x-10 font-mono text-white text-lg pr-4">
+            <li>
+              <Link
+                to="/signup"
+                className="hover:text-yellow-300 transition duration-300"
+              >
+                SignUp
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/login"
+                className="hover:text-yellow-300 transition duration-300"
+              >
+                Login
+              </Link>
+            </li>
+          </ul>
+        )}
       </div>
     </div>
-  );  
+  );
 };
 
 export default Navbar;

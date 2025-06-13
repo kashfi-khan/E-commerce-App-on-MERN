@@ -3,6 +3,7 @@ const cors = require("cors");
 
 require("./db/config");
 const User = require("./db/users");
+const Product = require("./db/products");
 
 const app = express();
 app.use(express.json());
@@ -29,5 +30,12 @@ app.post("/login", async (req, resp) => {
     resp.send({ result: "no user found " });
   }
 });
+
+app.post("/add-Products", async (req, resp) => {
+  console.log(req.body)
+  let product = new Product(req.body);
+  let result = await product.save();
+  resp.send(result); 
+})
 
 app.listen(5000);
