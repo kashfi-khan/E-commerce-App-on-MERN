@@ -5,30 +5,24 @@ import SignUp from "./Components/SignUp";
 import PrivateComponent from "./Components/privateComponent";
 import Login from "./Components/Login";
 import AddProduct from "./Components/Product/addProduct";
+import ProductList from "./Components/Product/productList";
 
 function App() {
   return (
     <div className="bg-gray-50 min-h-screen">
       <Nav />
 
-      <Routes>
+      <Routes>  
         <Route element={<PrivateComponent />}>
-        <Route
-          path="/"
-          element={
-            <div className="text-[50px] text-center font-bold">
-              helllo world
-            </div>
-          }
-        />
-        <Route path="/add-product" element={<AddProduct />} />
-        <Route path="/update" element={<h1>Update Product</h1>} />
-        <Route path="/logout" element={<h1>Logout</h1>} />
-        <Route path="/profile" element={<h1>Profile</h1>} />
+          <Route path="/" element={<ProductList />} />
+          <Route path="/add-product" element={<AddProduct />} />
+          <Route path="/update" element={<h1>Update Product</h1>} />
+          <Route path="/logout" element={<h1>Logout</h1>} />
+          <Route path="/profile" element={<h1>Profile</h1>} />
         </Route>
 
-         <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );
