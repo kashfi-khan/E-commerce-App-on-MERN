@@ -1,14 +1,16 @@
 const express = require("express");
 const cors = require("cors");
 
+const app = express();
+app.use(express.json());
+app.use(cors());
+
 require("./db/config");
 const User = require("./db/users");
 const Product = require("./db/products");
 const products = require("./db/products");
 
-const app = express();
-app.use(express.json());
-app.use(cors());
+
 
 app.post("/register", async (req, resp) => {
   let user = new User(req.body);
@@ -52,6 +54,25 @@ app.get("/products", async (req, resp) => {
 app.delete("/product/:id", async (req,resp)=>{
     
   const result = await products.deleteOne({_id:req.params.id});
+  resp.send(result);
+})
+
+app.get("/update/:id", async (req, resp) => {
+  let result = await Product.findOne({_id: req.params.id})
+  if(result){
+    resp.send(result)
+  }else{
+    resp.send({result:"No Data Found"})
+  }
+})
+
+app.put("/product/:id", async (req,resp) => {
+  let result = await Product.updateOne(
+    {_id : req.params.id},
+    {
+      $set : req.body
+    }
+  )
   resp.send(result);
 })
 
