@@ -39,7 +39,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/update"
+                to="/update/:id"
                 className="hover:text-yellow-300 transition duration-300"
               >
                 Update Products
